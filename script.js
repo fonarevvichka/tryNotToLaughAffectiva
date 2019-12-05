@@ -5,9 +5,9 @@ window.onload = function () {
     // Here we are adding those nodes a predefined div.
     var divRoot = document.getElementById("affdex_elements")
 
-    var width = 640;
-    var height = 480;
-
+    var width = 640
+    var height = 480
+    var startTime = 0
     //Construct a CameraDetector and specify the image width / height and face detector mode.
     detector = new affdex.CameraDetector(divRoot, width, height, affdex.FaceDetectorMode.LARGE_FACES); 
 
@@ -18,14 +18,14 @@ window.onload = function () {
 
     //Add a callback to notify when the detector is initialized and ready for runing.
     detector.addEventListener("onInitializeSuccess", function() {
-        document.getElementById("face_video_canvas").style.display = "block";
-        document.getElementById("face_video").style.display = "none";
+        document.getElementById("face_video_canvas").style.display = "block"
+        document.getElementById("face_video").style.display = "none"
     });
 
 
     //Add a callback to notify when camera access is denied
     detector.addEventListener("onWebcamConnectFailure", function() {
-        console.log("Webcam access denied");
+        console.log("Webcam access denied")
     });
 
     //The faces object contains the list of the faces detected in an image.
@@ -37,9 +37,11 @@ window.onload = function () {
 
             var smile = expressions["smile"]
             var mouthOpen = expressions["mouthOpen"]
-            console.log(timestamp.toFixed(2))
             if (smile > 0.9 && mouthOpen > 0.9) {
                 console.log("you lose")
+                startTime = timestamp
+            } else {
+                document.getElementById("scoreBoard").innerHTML = (timestamp - startTime).toFixed(1)
             }
         }
     });
