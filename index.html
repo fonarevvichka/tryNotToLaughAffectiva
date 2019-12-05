@@ -7,11 +7,8 @@
         <script src="https://download.affectiva.com/js/3.2.1/affdex.js"></script>
     </head>
 
-
     <body>
         <div id="videoPlayer"> 
-            <!-- <iframe width="560" height="315" src="http://www.youtube.com/embed/videoseries?list=PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo?autoplay=1" http-equiv="Content-Security-Policy" frameborder="0" allow="accelerometer; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-            <!-- <iframe width="560" height="315" src="https://www.youtube.com/watch?v=Wo2vL2k_SNc" frameborder="0" http-equiv="Content-Security-Policy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
             <iframe width="560" height="315" src="https://www.youtube.com/embed/Wo2vL2k_SNc?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         
@@ -20,33 +17,7 @@
             <button id="start" onclick="onStart()">Start Playing</button>
             <button id="reset" onclick="onReset()">Start Over</button>
 
-            <!-- <h3>Affectiva JS SDK CameraDetector to track different emotions.</h3>
-            <p>
-                <strong>Instructions</strong>
-                </br>
-                Press the start button to start the detector.
-                <br/> When a face is detected, the probabilities of the different emotions are written to the DOM.
-                <br/> Press the stop button to end the detector.
-            </p>
-            </div> -->
-
-            <div id="affdex_elements" style="width:680px;height:480px;"></div>
-            <!-- <div>
-                <div>
-            <br/><br/><br/><br/>
-                <strong>Test UI</strong>
-            <br/><br/><br/><br/><br/>
-            <div id="myui" style="color:red;"></div>
-                </div>
-                <div style="height:25em;">
-                <strong>Emotion Tracking Results</strong>
-                <div id="results" style="word-wrap:break-word;"></div>
-                </div>
-                <div>
-                <strong>Detector Log Msgs</strong>
-            <div id="logs"></div>
-                </div>
-            </div> -->
+                <div id="affdex_elements" style="width:680px;height:480px;"></div>
         </div>
     </body>
 </html>
