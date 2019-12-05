@@ -33,10 +33,17 @@ window.onload = function () {
     detector.addEventListener("onImageResultsSuccess", function(faces, image, timestamp) { 
         if (faces.length > 0) {
             drawFeaturePoints(image, faces[0].featurePoints);
-            // console.log("Joy: " + faces[0].emotions["joy"])
-            console.log("Mouth Open: " + faces[0].appearence)
+            var expressions = faces[0].expressions
+
+            var smile = expressions["smile"]
+            var mouthOpen = expressions["mouthOpen"]
+            console.log(timestamp.toFixed(2))
+            if (smile > 0.9 && mouthOpen > 0.9) {
+                console.log("you lose")
+            }
         }
     });
+
       //Draw the detected facial feature points on the image
     function drawFeaturePoints(img, featurePoints) {
         var c = document.getElementById("face_video_canvas");
