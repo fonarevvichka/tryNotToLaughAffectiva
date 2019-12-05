@@ -40,20 +40,19 @@ window.onload = function () {
             var smile = expressions["smile"]
             var mouthOpen = expressions["mouthOpen"]
 
-            console.log(engagement)
             if ((smile > 2.5 && mouthOpen > 2.5) && (timestamp-startTime) > 0.15) {
                 alert("You Lose! You didn't laugh/smile for: " + (timestamp - startTime).toFixed(1) + " seconds")
                 startTime = timestamp
 
-                // var player = document.getElementById("video")
-                // video.stopVideo()
+                var player = document.getElementById("videoPlayer")
+                stopVideo(player)
             } else {
                 document.getElementById("scoreBoard").innerHTML = (timestamp - startTime).toFixed(1)
             }
         }
     });
 
-      //Draw the detected facial feature points on the image
+    //Draw the detected facial feature points on the image
     function drawFeaturePoints(img, featurePoints) {
         var c = document.getElementById("face_video_canvas");
         if (c==null) return;
@@ -84,5 +83,17 @@ function onStart() {
 function onReset() {
 	if (detector && detector.isRunning) {
 		detector.reset();
+	}
+};
+
+function stopVideo(element) {
+	var iframe = element.querySelector( 'iframe');
+	var video = element.querySelector( 'video' );
+	if ( iframe ) {
+		var iframeSrc = iframe.src;
+		iframe.src = iframeSrc;
+	}
+	if ( video ) {
+		video.pause();
 	}
 };
