@@ -34,12 +34,19 @@ window.onload = function () {
         if (faces.length > 0) {
             drawFeaturePoints(image, faces[0].featurePoints);
             var expressions = faces[0].expressions
+            var emotions = faces[0].emotions
 
+            var engagement = emotions["engagement"]
             var smile = expressions["smile"]
             var mouthOpen = expressions["mouthOpen"]
-            if (smile > 0.9 && mouthOpen > 0.9) {
-                console.log("you lose")
+
+            console.log(engagement)
+            if ((smile > 2.5 && mouthOpen > 2.5) && (timestamp-startTime) > 0.15) {
+                alert("You Lose! You didn't laugh/smile for: " + (timestamp - startTime).toFixed(1) + " seconds")
                 startTime = timestamp
+
+                // var player = document.getElementById("video")
+                // video.stopVideo()
             } else {
                 document.getElementById("scoreBoard").innerHTML = (timestamp - startTime).toFixed(1)
             }
