@@ -14,3 +14,8 @@ body {
     line-height: 40px;
     text-align: center
   }
+
+.vidContainer {
+    padding-top: 20px;
+    text-align: center;
+}
