@@ -44,8 +44,6 @@ window.onload = function () {
                 alert("You Lose! You didn't laugh/smile for: " + (timestamp - startTime).toFixed(1) + " seconds")
                 startTime = timestamp
 
-                var player = document.getElementById("videoPlayer")
-                stopVideo(player)
             } else {
                 document.getElementById("scoreBoard").innerHTML = (timestamp - startTime).toFixed(1)
             }
@@ -83,17 +81,5 @@ function onStart() {
 function onReset() {
 	if (detector && detector.isRunning) {
 		detector.reset();
-	}
-};
-
-function stopVideo(element) {
-	var iframe = element.querySelector( 'iframe');
-	var video = element.querySelector( 'video' );
-	if ( iframe ) {
-		var iframeSrc = iframe.src;
-		iframe.src = iframeSrc;
-	}
-	if ( video ) {
-		video.pause();
 	}
 };
