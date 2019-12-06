@@ -1,4 +1,6 @@
 var detector
+var startTime = 0
+var currTime = 0
 
 window.onload = function () {
     // SDK Needs to create video and canvas nodes in the DOM in order to function
@@ -7,7 +9,6 @@ window.onload = function () {
 
     var width = 640
     var height = 480
-    var startTime = 0
     //Construct a CameraDetector and specify the image width / height and face detector mode.
     detector = new affdex.CameraDetector(divRoot, width, height, affdex.FaceDetectorMode.LARGE_FACES); 
 
@@ -32,6 +33,8 @@ window.onload = function () {
     //Faces object contains probabilities for all the different expressions, emotions and appearance metrics
     detector.addEventListener("onImageResultsSuccess", function(faces, image, timestamp) { 
         if (faces.length > 0) {
+            currTime = timestamp
+
             drawFeaturePoints(image, faces[0].featurePoints);
             var expressions = faces[0].expressions
             var emotions = faces[0].emotions
@@ -40,12 +43,11 @@ window.onload = function () {
             var smile = expressions["smile"]
             var mouthOpen = expressions["mouthOpen"]
 
-            if ((smile > 2.5 && mouthOpen > 2.5) && (timestamp-startTime) > 0.15) {
-                alert("You Lose! You didn't laugh/smile for: " + (timestamp - startTime).toFixed(1) + " seconds")
-                startTime = timestamp
-
+            if ((smile > 10 && mouthOpen > 25) && (timestamp-startTime) > 1.00) {
+                alert("You Lose! You didn't laugh/smile for: " + (currTime - startTime).toFixed(1) + " seconds")
+                startTime = currTime 
             } else {
-                document.getElementById("scoreBoard").innerHTML = (timestamp - startTime).toFixed(1)
+                document.getElementById("scoreBoard").innerHTML = (currTime - startTime).toFixed(1)
             }
         }
     });
@@ -79,7 +81,10 @@ function onStart() {
 
 //function executes when the Reset button is pushed.
 function onReset() {
+    console.log("called")
 	if (detector && detector.isRunning) {
+        startTime = currTime
+        console.log(startTime - currTime)
 		detector.reset();
 	}
 };
