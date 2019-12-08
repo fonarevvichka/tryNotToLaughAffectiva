@@ -28,15 +28,14 @@ body {
 .score {
   display: inline-block;
   padding: 15px;
-  padding-left: 100px;
+  padding-left: 75px;
 }
 .player h4 {
   font-weight: bold;
 }
 .score-box {
   border: 3px solid black;
-  padding: 60px;
-  width: 300px;
+  width: 400px;
   height: 400px;
   color: #2CB3C9;
   padding: 100px;
@@ -54,4 +53,8 @@ body {
 
 .btn-primary {
   background-color: #2CB3C9 !important;
+}
+
+.webcam {
+  padding-left: 800px;
 }
