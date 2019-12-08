@@ -18,6 +18,50 @@ body {
 }
 
 .vidContainer {
+<<<<<<< HEAD
   padding-top: 20px;
   text-align: center;
+=======
+    padding-top: 20px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.score-board {
+  text-align: center;
+  padding: 20px;
+}
+.score {
+  display: inline-block;
+  padding: 15px;
+  padding-left: 75px;
+}
+.player h4 {
+  font-weight: bold;
+}
+.score-box {
+  border: 3px solid black;
+  width: 400px;
+  height: 400px;
+  color: #2CB3C9;
+  padding: 100px;
+  font-size: 100px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+}
+
+.button-box {
+ padding-left: 425px;
+}
+
+.btn-primary {
+  background-color: #2CB3C9 !important;
+}
+
+.webcam {
+  padding-left: 800px;
+>>>>>>> 2af3c17b01c404eff40537c2d36edbf70d400b8f
 }
