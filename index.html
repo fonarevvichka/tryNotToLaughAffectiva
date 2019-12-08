@@ -3,7 +3,10 @@
 <html>
     <head>
         <title> Try not to laught challenge</title>
+        <!-- Import bootstrap -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <!-- Load in CSS -->
         <link href="style.css" rel="stylesheet">
         <script src="script.js"></script>
         <script src="https://download.affectiva.com/js/3.2.1/affdex.js"></script>
@@ -13,14 +16,24 @@
       <div class="header clearfix">
           <h3 class="text-muted">Try Not to Laugh</h3>
       </div>
+
+      <div class="box">
         <div id="videoPlayer" class="vidContainer"> 
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Wo2vL2k_SNc?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/Wo2vL2k_SNc?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <div id="scoreBoard">
-            0
+        
+        
+        <div class="score-board">
+            <div class="score">
+                <h4>Score</h4>
+                <div class="score-box">
+                <div id="scoreBoard"> 0 </div>
+                </div>
+            </div>
+            </div>
+            </div>
         </div>
         <div>
-            <div>
             <button id="start" onclick="onStart()">Start Playing</button>
             <button id="reset" onclick="onReset()">Start Over</button>
             <div id="affdex_elements" style="width:680px;height:480px;"></div>
