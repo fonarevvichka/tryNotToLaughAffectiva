@@ -45,6 +45,13 @@ body {
 
 .box {
   display: flex;
-  /* align-items: center; */
   justify-content: center;
+}
+
+.button-box {
+ padding-left: 425px;
+}
+
+.btn-primary {
+  background-color: #2CB3C9 !important;
 }
