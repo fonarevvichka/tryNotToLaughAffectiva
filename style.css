@@ -20,7 +20,7 @@ body {
 .vidContainer {
     padding-top: 20px;
     text-align: center;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
 }
 
 .score-board {
@@ -60,3 +60,10 @@ body {
 .webcam {
   padding-left: 1000px;
 }
+
+.pbar {
+  margin-left: 230px;
+  width: 1120px;
+  margin-bottom: 30px;
+}
+
