@@ -13,30 +13,31 @@
     </head>
 
     <body>
-      <div class="header clearfix">
-          <h3 class="text-muted">Try Not to Laugh</h3>
-      </div>
-
-      <div class="box">
-        <div id="videoPlayer" class="vidContainer"> 
-            <iframe width="1120" height="630" src="https://www.youtube.com/embed/Wo2vL2k_SNc?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="header clearfix">
+            <h3 class="text-muted">Try Not to Laugh</h3>
         </div>
+
+        <div class="box">
+            <div id="videoPlayer" class="vidContainer"> 
+                <iframe width="1120" height="630" src="https://www.youtube.com/embed/Wo2vL2k_SNc?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         
-        <div class="score-board">
-            <div class="score">
-                <h4>Score</h4>
-                <div class="score-box">
-                <div id="scoreBoard"> 0 </div>
+            <div class="score-board">
+                <div class="score">
+                    <h4>Score</h4>
+                    <div class="score-box">
+                    <div id="scoreBoard"> 0 </div>
+                    </div>
                 </div>
             </div>
-            </div>
-            </div>
         </div>
+        
         <div class="pbar">
             <div class="progress">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                <div id="dangerBar" class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
         </div>
+
 
         <div class="button-box">            
             <button id="start" class="btn btn-primary btn-lg blue" onclick="onStart()">Start Playing</button>

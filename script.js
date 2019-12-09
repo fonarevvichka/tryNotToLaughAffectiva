@@ -43,6 +43,11 @@ window.onload = function () {
             var smile = expressions["smile"]
             var mouthOpen = expressions["mouthOpen"]
 
+            var value = ((smile/10 + mouthOpen/25) / 5.5) * 40 *1.25
+
+            width = "width: " + value.toString() + "%"
+            document.getElementById("dangerBar").setAttribute("style", width)
+
             if ((smile > 10 && mouthOpen > 25) && (timestamp-startTime) > 1.00) {
                 alert("You Lose! You didn't laugh/smile for: " + (currTime - startTime).toFixed(1) + " seconds")
                 startTime = currTime 
