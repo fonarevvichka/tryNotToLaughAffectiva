@@ -17,11 +17,7 @@ body {
   text-align: center
 }
 
-.vidContainer {
-    padding-top: 20px;
-    text-align: center;
-    padding-bottom: 40px;
-}
+
 
 .score-board {
   text-align: center;
@@ -44,13 +40,19 @@ body {
   font-size: 100px;
 }
 
+.vidContainer {
+    padding-top: 20px;
+    text-align: center;
+    padding-bottom: 40px;
+}
 .box {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  padding-left: 12.5%;
 }
 
 .button-box {
- padding-left: 425px;
+ padding-left: 35%;
 }
 
 .btn-primary {
@@ -58,11 +60,11 @@ body {
 }
 
 .webcam {
-  padding-left: 1000px;
+  padding-left: 65%;
 }
 
 .pbar {
-  margin-left: 230px;
+  margin-left: 12.5%;
   width: 1120px;
   margin-bottom: 30px;
 }
